@@ -1,0 +1,628 @@
+{
+	"info": {
+		"_postman_id": "b9bf72b3-1a83-4c74-8943-07183f405a4e",
+		"name": "Demo Juice Shop",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Sign Up",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\",function(){\r",
+							"pm.response.to.have.status(201);\r",
+							"})\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"email\":\"test3@gmail.com\",\"password\":\"{{password}}\",\"passwordRepeat\":\"123456789\",\"securityQuestion\":{\"id\":7,\"question\":\"Name of your favorite pet?\",\"createdAt\":\"2021-12-01T03:50:51.186Z\",\"updatedAt\":\"2021-12-01T03:50:51.186Z\"},\"securityAnswer\":\"armi\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://demo.owasp-juice.shop/api/Users",
+					"protocol": "http",
+					"host": [
+						"demo",
+						"owasp-juice",
+						"shop"
+					],
+					"path": [
+						"api",
+						"Users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Security Answers",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\",function(){\r",
+							"pm.response.to.have.status(201);\r",
+							"})\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"UserId\":54,\"answer\":\"armi\",\"SecurityQuestionId\":7}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://demo.owasp-juice.shop/api/SecurityAnswers/",
+					"protocol": "http",
+					"host": [
+						"demo",
+						"owasp-juice",
+						"shop"
+					],
+					"path": [
+						"api",
+						"SecurityAnswers",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\",function(){\r",
+							"pm.response.to.have.status(200);\r",
+							"})\r",
+							"pm.test(\"Response time is less than 200ms\",()=>{\r",
+							"pm.expect(pm.response.responseTime).to.be.below(200);    \r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"email\": \"{{email}}\", \"password\":\"{{password}}\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://demo.owasp-juice.shop/rest/user/login",
+					"protocol": "http",
+					"host": [
+						"demo",
+						"owasp-juice",
+						"shop"
+					],
+					"path": [
+						"rest",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Products",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\",function(){\r",
+							"pm.response.to.have.status(200);\r",
+							"})\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://demo.owasp-juice.shop/api/Products/1?d=Wed%20Dec%2001%202021",
+					"protocol": "http",
+					"host": [
+						"demo",
+						"owasp-juice",
+						"shop"
+					],
+					"path": [
+						"api",
+						"Products",
+						"1"
+					],
+					"query": [
+						{
+							"key": "d",
+							"value": "Wed%20Dec%2001%202021"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Review Product",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\",function(){\r",
+							"pm.response.to.have.status(200);\r",
+							"})\r",
+							"pm.test(\"Response time is less than 200ms\",()=>{\r",
+							"pm.expect(pm.response.responseTime).to.be.below(200);    \r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://demo.owasp-juice.shop/rest/products/1/reviews",
+					"protocol": "http",
+					"host": [
+						"demo",
+						"owasp-juice",
+						"shop"
+					],
+					"path": [
+						"rest",
+						"products",
+						"1",
+						"reviews"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Submit Review",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\",function(){\r",
+							"pm.response.to.have.status(201);\r",
+							"})\r",
+							"pm.test(\"Response time is less than 200ms\",()=>{\r",
+							"pm.expect(pm.response.responseTime).to.be.below(200);    \r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"message\":\"nice\",\"author\":\"Anonymous\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://demo.owasp-juice.shop/rest/products/1/reviews",
+					"protocol": "http",
+					"host": [
+						"demo",
+						"owasp-juice",
+						"shop"
+					],
+					"path": [
+						"rest",
+						"products",
+						"1",
+						"reviews"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\",function(){\r",
+							"pm.response.to.have.status(200);\r",
+							"})\r",
+							"pm.test(\"Response time is less than 200ms\",()=>{\r",
+							"pm.expect(pm.response.responseTime).to.be.below(200);    \r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://demo.owasp-juice.shop/rest/user/whoami",
+					"protocol": "http",
+					"host": [
+						"demo",
+						"owasp-juice",
+						"shop"
+					],
+					"path": [
+						"rest",
+						"user",
+						"whoami"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Change Language",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\",function(){\r",
+							"pm.response.to.have.status(200);\r",
+							"})\r",
+							"pm.test(\"Response time is less than 200ms\",()=>{\r",
+							"pm.expect(pm.response.responseTime).to.be.below(200);    \r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://demo.owasp-juice.shop/assets/i18n/tr_TR.json",
+					"protocol": "http",
+					"host": [
+						"demo",
+						"owasp-juice",
+						"shop"
+					],
+					"path": [
+						"assets",
+						"i18n",
+						"tr_TR.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Captcha",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\",function(){\r",
+							"pm.response.to.have.status(200);\r",
+							"})\r",
+							"pm.test(\"Response time is less than 200ms\",()=>{\r",
+							"pm.expect(pm.response.responseTime).to.be.below(200);    \r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://demo.owasp-juice.shop/rest/captcha/",
+					"protocol": "http",
+					"host": [
+						"demo",
+						"owasp-juice",
+						"shop"
+					],
+					"path": [
+						"rest",
+						"captcha",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Feedbacks",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\",function(){\r",
+							"pm.response.to.have.status(200);\r",
+							"})\r",
+							"pm.test(\"Response time is less than 200ms\",()=>{\r",
+							"pm.expect(pm.response.responseTime).to.be.below(200);    \r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://demo.owasp-juice.shop/api/Feedbacks/",
+					"protocol": "http",
+					"host": [
+						"demo",
+						"owasp-juice",
+						"shop"
+					],
+					"path": [
+						"api",
+						"Feedbacks",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Write Feedback",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\",function(){\r",
+							"pm.response.to.have.status(201);\r",
+							"})\r",
+							"pm.test(\"Response time is less than 200ms\",()=>{\r",
+							"pm.expect(pm.response.responseTime).to.be.below(200);    \r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"captchaId\": 65,\"captcha\": \"22\", \"comment\": \"guzel bir uygulama (anonymous)\", \"rating\": 3}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://demo.owasp-juice.shop/api/Feedbacks/",
+					"protocol": "http",
+					"host": [
+						"demo",
+						"owasp-juice",
+						"shop"
+					],
+					"path": [
+						"api",
+						"Feedbacks",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Support",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\",function(){\r",
+							"pm.response.to.have.status(200);\r",
+							"})\r",
+							"pm.test(\"Response time is less than 200ms\",()=>{\r",
+							"pm.expect(pm.response.responseTime).to.be.below(200);    \r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://demo.owasp-juice.shop/rest/chatbot/status",
+					"protocol": "http",
+					"host": [
+						"demo",
+						"owasp-juice",
+						"shop"
+					],
+					"path": [
+						"rest",
+						"chatbot",
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Photo Wall",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\",function(){\r",
+							"pm.response.to.have.status(200);\r",
+							"})\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://demo.owasp-juice.shop/rest/memories/",
+					"protocol": "http",
+					"host": [
+						"demo",
+						"owasp-juice",
+						"shop"
+					],
+					"path": [
+						"rest",
+						"memories",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Address",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\",function(){\r",
+							"pm.response.to.have.status(200);\r",
+							"})\r",
+							"pm.test(\"Response time is less than 200ms\",()=>{\r",
+							"pm.expect(pm.response.responseTime).to.be.below(200);    \r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://demo.owasp-juice.shop/api/Addresss",
+					"protocol": "http",
+					"host": [
+						"demo",
+						"owasp-juice",
+						"shop"
+					],
+					"path": [
+						"api",
+						"Addresss"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\",function(){\r",
+							"pm.response.to.have.status(200);\r",
+							"})\r",
+							"pm.test(\"Response time is less than 200ms\",()=>{\r",
+							"pm.expect(pm.response.responseTime).to.be.below(200);    \r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://demo.owasp-juice.shop/rest/products/search?q=apple juice",
+					"protocol": "http",
+					"host": [
+						"demo",
+						"owasp-juice",
+						"shop"
+					],
+					"path": [
+						"rest",
+						"products",
+						"search"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "apple juice"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
