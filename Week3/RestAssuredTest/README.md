@@ -6,12 +6,16 @@
 
 Test case 1:
 >Status değeri olarak 200 alınmasının kontrolü
+
 Test case 2:
 >Covid data değerleri için ülkelerin codeları dikkate alınarak kontrol edilir.
+
 Test case 3:
 >Ülkelerin isimleri için covid data değerlerinin alınması test edilir.
+
 Test case 4:
 >Total covid pozitif değerlerinin alınması kontrolü yapılır.
+
 Test case 5:
 >Covid değerlerinin verilerin tarihe uygun getirilmesi test edilir.
 
