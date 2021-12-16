@@ -1,5 +1,5 @@
 ##### Bu proje C# dili ile Test Otomasyon için hazırlanmıştır.
-Projede tasarım ürün sitesi olan [KAFT]https://www.kaft.com/(https://www.kaft.com/) kullanılmıştır.
+Projede tasarım ürün sitesi olan [KAFT](https://www.kaft.com/(https://www.kaft.com/) kullanılmıştır.
 ###### Proje Adımları:
 * İlk olarak Visual Studio Code kurulu değilse kurulmalıdır, geliştirme bu platform içerisinde gerçekleştirilecektir.
 * Ardından gerekli olan paketler View->Command Palent menüsünden Nuget Package Manager yardımı ile indirilmelir.Bunlar Seleniun.WebDriver,Microsoft.TestPlatform gibi paketlerdir.
