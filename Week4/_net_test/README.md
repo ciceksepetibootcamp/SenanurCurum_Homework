@@ -2,7 +2,7 @@
 Projede tasarım ürün sitesi olan [KAFT](https://www.kaft.com/) kullanılmıştır.
 ###### Proje Adımları:
 * İlk olarak Visual Studio Code kurulu değilse kurulmalıdır, geliştirme bu platform içerisinde gerçekleştirilecektir.
-* Ardından gerekli olan paketler View->Command Palent menüsünden Nuget Package Manager yardımı ile indirilmelir.Bunlar Seleniun.WebDriver,Microsoft.TestPlatform gibi paketlerdir.
+* Ardından gerekli olan paketler View->Command Palent menüsünden Nuget Package Manager yardımı ile indirilmelir.Bunlar Selenium.WebDriver,Microsoft.TestPlatform gibi paketlerdir.
 * Chromeda eklenti olarak bulunan Selenium Ide kullanılarak Kaft sitesinin urlsi girilir.Record işlemine başlanır.İlk olarak Anasayfadaki 'Menü' textine tıklanır.
 > ![Screenshot_8](https://user-images.githubusercontent.com/46262318/146386568-b1c4399f-01c0-48a9-8843-d105054efc41.jpg)
 > ![Screenshot_9](https://user-images.githubusercontent.com/46262318/146386597-5e3aab50-63ea-48ec-ba95-677152172d86.jpg)
