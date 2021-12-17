@@ -1,5 +1,7 @@
 ##### Bu proje Python ile geliştirilmiştir.Geliştirme ortamı olarak PyCharm kullanılmıştır.
 Projede tasarım ürün sitesi [KAFT](https://www.kaft.com/) incelenmiştir.
+
+Test Senaryosu: Sipariş Takibi kontrolü
 Proje Adımları:
 * İlk olarak gerekli pytest,selenium paketleri install edilir.
 * Selenium ide kullanarak KAFT Anasayfaya gidilir.
