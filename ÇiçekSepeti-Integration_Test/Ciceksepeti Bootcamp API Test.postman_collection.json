@@ -1,0 +1,290 @@
+{
+	"info": {
+		"_postman_id": "31b73b6a-a485-4b03-8b24-a421e9885aed",
+		"name": "Ciceksepeti Bootcamp API Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "cityName_ankara",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Ankara ili için yapılan yorumlar listesi\",function(){\r",
+							"    let response=pm.response.json();\r",
+							"    i=0;\r",
+							"    while(response.reviewDtos[i]!=null){\r",
+							"    if(response.reviewDtos[i].cityName=='ANKARA')\r",
+							"    {\r",
+							"        let comments=response.reviewDtos[i].comment;\r",
+							"        i++;\r",
+							"        console.log(comments);\r",
+							"    }\r",
+							"    }\r",
+							"})\r",
+							"pm.test(\"Response time should be less than 1000ms\",function(){\r",
+							"    pm.expect(pm.response.responseTime).to.below(1000);\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{mainURL}}?cityName=ankara",
+					"host": [
+						"{{mainURL}}"
+					],
+					"query": [
+						{
+							"key": "cityName",
+							"value": "ankara"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "cityName_ankara",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://43a63e71-b824-4c12-b7a9-5f9750a62d21.mock.pstmn.io?cityName=ankara",
+							"protocol": "https",
+							"host": [
+								"43a63e71-b824-4c12-b7a9-5f9750a62d21",
+								"mock",
+								"pstmn",
+								"io"
+							],
+							"query": [
+								{
+									"key": "cityName",
+									"value": "ankara"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [],
+					"cookie": [],
+					"body": "{\n  \"paginationResponse\": {\n    \"pageItemsCount\": 20,\n    \"totalItemsCount\": 25005,\n    \"totalPageCount\": 1251\n  },\n  \"totalCount\": 25005,\n  \"starDtos\": [\n    {\n      \"point\": 1,\n      \"percent\": 5,\n      \"count\": 1228\n    },\n    {\n      \"point\": 2,\n      \"percent\": 1,\n      \"count\": 362\n    },\n    {\n      \"point\": 3,\n      \"percent\": 2,\n      \"count\": 606\n    },\n    {\n      \"point\": 4,\n      \"percent\": 9,\n      \"count\": 2247\n    },\n    {\n      \"point\": 5,\n      \"percent\": 82,\n      \"count\": 20562\n    }\n  ],\n  \"averageRate\": 4.5,\n  \"averageAllReviewsRate\": 4.5,\n  \"reviewDtos\": [\n    {\n      \"name\": \"Name Surname\",\n      \"comment\": \"10 luk hizmet \",\n      \"rating\": 10,\n      \"createOn\": \"2021-12-16T08:36:02.101Z\",\n      \"regionName\": \"\",\n      \"cityName\": \"ANKARA\"\n    },\n    {\n      \"name\": \"Name Surname 2\",\n      \"comment\": \"Kaliteli Kargo\",\n      \"rating\": 10,\n      \"createOn\": \"2021-12-16T08:31:53.078Z\",\n      \"regionName\": \"\",\n      \"cityName\": \"ANKARA\"\n    },\n    {\n      \"name\": \"Name Surname 3\",\n      \"comment\": \"Hızlı kargo ve sürpriz için teşekkürler\",\n      \"rating\": 10,\n      \"createOn\": \"2021-12-16T07:49:34.927Z\",\n      \"regionName\": \"\",\n      \"cityName\": \"ANKARA\"\n    },\n    {\n      \"name\": \"Name Surname 4\",\n      \"comment\": \"Eşime aldım, gönderilmedi\",\n      \"rating\": 0,\n      \"createOn\": \"2021-12-16T07:08:19.8Z\",\n      \"regionName\": \"\",\n      \"cityName\": \"HATAY\"\n    }\n  ]\n}"
+				}
+			]
+		},
+		{
+			"name": "cityName_istanbul",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"İstanbul ili için yapılan yorumlar listesi\",function(){\r",
+							"    let response=pm.response.json();\r",
+							"    i=0;\r",
+							"    while(response.reviewDtos[i]!=null){\r",
+							"    if(response.reviewDtos[i].cityName=='ISTANBUL')\r",
+							"    {\r",
+							"        let comments=response.reviewDtos[i].comment;\r",
+							"        i++;\r",
+							"        console.log(comments);\r",
+							"    }\r",
+							"    }\r",
+							"})\r",
+							"pm.test(\"Response time should be less than 1000ms\",function(){\r",
+							"    pm.expect(pm.response.responseTime).to.below(1000);\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{mainURL}}?cityName=istanbul",
+					"host": [
+						"{{mainURL}}"
+					],
+					"query": [
+						{
+							"key": "cityName",
+							"value": "istanbul"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "cityName_istanbul",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://43a63e71-b824-4c12-b7a9-5f9750a62d21.mock.pstmn.io?cityName=istanbul",
+							"protocol": "https",
+							"host": [
+								"43a63e71-b824-4c12-b7a9-5f9750a62d21",
+								"mock",
+								"pstmn",
+								"io"
+							],
+							"query": [
+								{
+									"key": "cityName",
+									"value": "istanbul"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [],
+					"cookie": [],
+					"body": "{\n    \"paginationResponse\": {\n        \"pageItemsCount\": 20,\n        \"totalItemsCount\": 25005,\n        \"totalPageCount\": 1251\n    },\n    \"totalCount\": 25005,\n    \"starDtos\": [\n        {\n            \"point\": 1,\n            \"percent\": 5,\n            \"count\": 1228\n        },\n        {\n            \"point\": 2,\n            \"percent\": 1,\n            \"count\": 362\n        },\n        {\n            \"point\": 3,\n            \"percent\": 2,\n            \"count\": 606\n        },\n        {\n            \"point\": 4,\n            \"percent\": 9,\n            \"count\": 2247\n        },\n        {\n            \"point\": 5,\n            \"percent\": 82,\n            \"count\": 20562\n        }\n    ],\n    \"averageRate\": 4.5,\n    \"averageAllReviewsRate\": 4.5,\n    \"reviewDtos\": [\n        {\n            \"name\": \"Name Surname\",\n            \"comment\": \"10 luk hizmet \",\n            \"rating\": 10,\n            \"createOn\": \"2021-12-16T08:36:02.101Z\",\n            \"regionName\": \"\",\n            \"cityName\": \"ISTANBUL\"\n        },\n        {\n            \"name\": \"Name Surname 2\",\n            \"comment\": \"Kaliteli Kargo\",\n            \"rating\": 10,\n            \"createOn\": \"2021-12-16T08:31:53.078Z\",\n            \"regionName\": \"\",\n            \"cityName\": \"ISTANBUL\"\n        },\n        {\n            \"name\": \"Name Surname 3\",\n            \"comment\": \"Hızlı kargo ve sürpriz için teşekkürler\",\n            \"rating\": 10,\n            \"createOn\": \"2021-12-16T07:49:34.927Z\",\n            \"regionName\": \"\",\n            \"cityName\": \"ISTANBUL\"\n        },\n        {\n            \"name\": \"Name Surname 4\",\n            \"comment\": \"Eşime aldım, gönderilmedi\",\n            \"rating\": 0,\n            \"createOn\": \"2021-12-16T07:08:19.8Z\",\n            \"regionName\": \"\",\n            \"cityName\": \"ISTANBUL\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "cityName_van",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"    pm.response.to.have.status(404);\r",
+							"});\r",
+							"pm.test(\"Response time should be less than 1000ms\",function(){\r",
+							"    pm.expect(pm.response.responseTime).to.below(1000);\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{mainURL}}?cityName=van",
+					"host": [
+						"{{mainURL}}"
+					],
+					"query": [
+						{
+							"key": "cityName",
+							"value": "van"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "cityName_van",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://43a63e71-b824-4c12-b7a9-5f9750a62d21.mock.pstmn.io?cityName=van",
+							"protocol": "https",
+							"host": [
+								"43a63e71-b824-4c12-b7a9-5f9750a62d21",
+								"mock",
+								"pstmn",
+								"io"
+							],
+							"query": [
+								{
+									"key": "cityName",
+									"value": "van"
+								}
+							]
+						}
+					},
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Not Found\"\n}"
+				}
+			]
+		},
+		{
+			"name": "cityName is null",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"pm.test(\"Response time should be less than 1000ms\",function(){\r",
+							"    pm.expect(pm.response.responseTime).to.below(1000);\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{mainURL}}?cityName",
+					"host": [
+						"{{mainURL}}"
+					],
+					"query": [
+						{
+							"key": "cityName",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "cityName is null",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://43a63e71-b824-4c12-b7a9-5f9750a62d21.mock.pstmn.io?cityName",
+							"protocol": "https",
+							"host": [
+								"43a63e71-b824-4c12-b7a9-5f9750a62d21",
+								"mock",
+								"pstmn",
+								"io"
+							],
+							"query": [
+								{
+									"key": "cityName",
+									"value": null
+								}
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [],
+					"cookie": [],
+					"body": "{\n  \"cityName\": [\n    \"'cityName' can not be null.\"\n  ]\n}"
+				}
+			]
+		}
+	]
+}
