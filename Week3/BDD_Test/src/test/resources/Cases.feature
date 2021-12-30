@@ -1,5 +1,5 @@
 Feature: İdefix test senaryoları
-  @Pozitive
+  @Positive
   Scenario Outline: Arama Testi
     Given Kullanici idefix anasayfasina girer
     When Arama kutusuna "<searchkey>" girdiginde
