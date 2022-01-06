@@ -29,7 +29,7 @@ public class LoginTest {
         loginPage.checkLoginMessage("Merhaba");
     }
      @When( "Profilim'e tiklayip mail adresi \"senanurcurum@gmail.com\" ve sifresini hatali \"password\" girdiginde")
-    public void successfull_login(String email,String password){
+    public void wrong_login(String email,String password){
         LoginPage loginPage=new LoginPage(driver);
         loginPage.loginwithCredentials(email,password);
     }
