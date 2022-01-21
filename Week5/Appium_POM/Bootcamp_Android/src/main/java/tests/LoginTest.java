@@ -6,13 +6,25 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.LoginPage;
+import java.io.File; 
 
 public class LoginTest extends BaseTest{
     @Test
     public void successfullLogin() throws InterruptedException {
 
         LoginPage loginPage=new LoginPage(driver);
-        loginPage.loginwithCredentials("test_mail","test_password");
+        try{
+            File myObj = new File("mavilogin.txt");
+            Scanner myReader = new Scanner(myObj);
+            String mail = myReader.nextLine(); 
+            String password = myReader.nextLine(); 
+        }
+        catch(FileNotFoundException e)
+        {
+            System.out.println("dosya bulunamadı !");
+            e.printStackTrace();
+        }
+        loginPage.loginwithCredentials(mail,password);
         MobileElement els7 = (MobileElement) driver.findElementByXPath("//*[@text=\"Mavi.com'a Giriş Yap\"]");
         els7.click();
         MobileElement els8 = (MobileElement) driver.findElementByXPath("//*[@text=\"Onayla\"]");
