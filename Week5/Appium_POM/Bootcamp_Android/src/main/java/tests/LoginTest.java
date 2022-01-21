@@ -12,7 +12,7 @@ public class LoginTest extends BaseTest{
     public void successfullLogin() throws InterruptedException {
 
         LoginPage loginPage=new LoginPage(driver);
-        loginPage.loginwithCredentials("senanurcurum@gmail.com","P@ssw0rd.");
+        loginPage.loginwithCredentials("test_mail","test_password");
         MobileElement els7 = (MobileElement) driver.findElementByXPath("//*[@text=\"Mavi.com'a Giriş Yap\"]");
         els7.click();
         MobileElement els8 = (MobileElement) driver.findElementByXPath("//*[@text=\"Onayla\"]");
@@ -25,7 +25,7 @@ public class LoginTest extends BaseTest{
     public void wrongpasswordLogin() throws InterruptedException{
 
         LoginPage loginPage=new LoginPage(driver);
-        loginPage.loginwithCredentials("senanurcurum@gmail.com","1905");
+        loginPage.loginwithCredentials("test_mail","test_password");
         MobileElement els7 = (MobileElement) driver.findElementByXPath("//*[@text=\"Mavi.com'a Giriş Yap\"]");
         els7.click();
         loginPage.checkErrorMessage("Girilen email adresi veya parola hatalıdır");
