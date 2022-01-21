@@ -9,7 +9,7 @@ public class SignUpTest extends BaseTest {
     @Test
     public void signupwith_exist_email() throws InterruptedException{
         SignUpPage signuppage= new SignUpPage(driver);
-        signuppage.signupwithCredentials("senanurcurum@gmail.com","P@ssw0rd.","P@ssw0rd.");
+        signuppage.signupwithCredentials("test_mail","test_password","test_password");
         MobileElement el_tik = (MobileElement) driver.findElementById("com.mavi.kartus:id/imgCheckBoxEmailPermission");
         el_tik.click();
         MobileElement el_devam_et = (MobileElement) driver.findElementByXPath("(//android.widget.RelativeLayout)[13]");
